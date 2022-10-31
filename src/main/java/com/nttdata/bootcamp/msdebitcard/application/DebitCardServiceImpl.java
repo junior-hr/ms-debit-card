@@ -25,6 +25,7 @@ public class DebitCardServiceImpl implements DebitCardService {
                 .flatMap(debitCardRepository::findById)
                 .switchIfEmpty(Mono.error(new ResourceNotFoundException("Tarjeta de Débito", "idDebitCard", idDebitCard)));
     }
+
     @Override
     public Mono<DebitCard> findByCardNumber(String cardNumber) {
         return Mono.just(cardNumber)
@@ -52,6 +53,6 @@ public class DebitCardServiceImpl implements DebitCardService {
     public Mono<Void> delete(String idDebitCard) {
         return debitCardRepository.findById(idDebitCard)
                 .switchIfEmpty(Mono.error(new ResourceNotFoundException("Tarjeta de Débito", "idDebitCard", idDebitCard)))
-                .flatMap(dcu ->  debitCardRepository.delete(dcu));
+                .flatMap(dcu -> debitCardRepository.delete(dcu));
     }
 }
