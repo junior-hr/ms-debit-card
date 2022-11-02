@@ -15,9 +15,7 @@ spring:
     name: service-debit-card
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      database: DebitCardDB
+      uri: mongodb://localhost:27017/DebitCardDB
       auto-index-creation: true
   config:
     import: optional:configserver:http://ms-config-server:8888
