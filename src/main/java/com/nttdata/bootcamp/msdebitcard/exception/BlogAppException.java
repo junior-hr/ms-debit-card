@@ -1,11 +1,14 @@
 package com.nttdata.bootcamp.msdebitcard.exception;
 
-
+import org.springframework.http.HttpStatus;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.http.HttpStatus;
 
+/**
+ * Class BlogAppException.
+ * DebiCard microservice class BlogAppException.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
